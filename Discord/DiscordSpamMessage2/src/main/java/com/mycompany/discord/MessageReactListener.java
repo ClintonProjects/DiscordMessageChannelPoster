@@ -1,7 +1,5 @@
 package com.mycompany.discord;
-
 import org.json.JSONException;
-
 import com.mycompany.model.LocalVeribles;
 import com.mycompany.selenium.BrowserConfig;
 import com.mycompany.selenium.DiscordSignIn;
@@ -12,12 +10,10 @@ public class MessageReactListener extends ListenerAdapter {
 
     @Override
     public void onPrivateMessageReceived(PrivateMessageReceivedEvent evt) {
-        if (evt.getAuthor().getId().equalsIgnoreCase("UserDiscordIdGoesHere")) {
-//			System.out.println("SELF USER");
+        if (evt.getAuthor().getId().equalsIgnoreCase("User Discord Unique Id Goes Here")) { // This needs to be changed
             LocalVeribles.discordBot.setAuthor(evt.getAuthor());
             LocalVeribles.discordBot.setChannel(evt.getChannel());
             LocalVeribles.discordBot.setObjMsg(evt.getMessage());
-//			LocalVeribles.discordBot.setGuild(evt.getGuild());
 
             if (LocalVeribles.discordBot.getObjMsg().getContentRaw().startsWith("!cmd")) {
                 DisocrdCommandService.commandList();
