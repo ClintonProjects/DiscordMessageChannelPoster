@@ -19,8 +19,8 @@ public class onStart {
             throws LoginException, UnsupportedEncodingException, InterruptedException, IOException, JSONException {
         BrowserConfig.setBrowserConfig();
         DisocrdCommandService.loadServers();
-        LocalVeribles.discordBot = new DiscordBot("discord token");
+        LocalVeribles.discordBot = new DiscordBot("discord token"); // This cannot be empty
         LocalVeribles.discordBot.Discord();
-        LocalVeribles.discordLogin = new DiscordLogin("discord user name", "discord password", "2fa code");
-    }
+        LocalVeribles.discordLogin = new DiscordLogin("discord user name", "discord password", "2fa code"); // This cannot be empty
+    } 
 }

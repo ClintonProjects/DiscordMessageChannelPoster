@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.openqa.selenium.Keys;
-
 import com.mycompany.json.Jsonto;
 import com.mycompany.json.NotePad;
 import com.mycompany.model.DiscordDetails;
@@ -60,13 +59,11 @@ public class DisocrdCommandService {
 
     public static void loadServers() throws JSONException {
         NotePad notePad = new NotePad();
-        JSONArray rsGoldObjList = Jsonto.stringToObjectArray(notePad.read("Servers"));
+        JSONArray listOfServersObject = Jsonto.stringToObjectArray(notePad.read("Servers"));
         LocalVeribles.discordDetails.clear();
-        System.out.println(rsGoldObjList.length());
-
-//		for (Object i : rsGoldObjList) {
-        for (int i = 0; i < rsGoldObjList.length(); i++) {
-            JSONObject firstResult = (JSONObject) rsGoldObjList.get(i);
+        System.out.println(listOfServersObject.length());
+        for (int i = 0; i < listOfServersObject.length(); i++) {
+            JSONObject firstResult = (JSONObject) listOfServersObject.get(i);
             LocalVeribles.discordDetails.add(new DiscordDetails(firstResult.getString("id"),
                     firstResult.getString("channelName"), firstResult.getString("channelId"),
                     firstResult.getString("serverId"), firstResult.getBoolean("sendMessage")));

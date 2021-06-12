@@ -1,7 +1,5 @@
 package com.mycompany.model;
-
 import java.util.ArrayList;
-
 import com.mycompany.discord.DiscordBot;
 import com.mycompany.discord.DisocrdCommandService;
 

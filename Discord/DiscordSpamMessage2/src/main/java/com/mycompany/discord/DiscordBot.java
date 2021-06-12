@@ -27,7 +27,7 @@ public class DiscordBot extends DiscordConnection {
         embed.setAuthor(getJda().getSelfUser().getName(), null, getJda().getSelfUser().getEffectiveAvatarUrl());
         embed.setColor(Color.yellow);
         embed.setDescription(message);
-        jda.openPrivateChannelById().queue(); //long channel id goes here of user to private message
+        jda.openPrivateChannelById().queue(); //long channel id goes here of user to private message, this will error if empty
         channel.sendMessage(embed.build()).queue();
     }
 
@@ -36,7 +36,7 @@ public class DiscordBot extends DiscordConnection {
         embed.setAuthor(getJda().getSelfUser().getName(), null, getJda().getSelfUser().getEffectiveAvatarUrl());
         embed.setColor(Color.yellow);
         embed.setDescription(message);
-        jda.openPrivateChannelById().queue(); //long channel id goes here of user to private message
+        jda.openPrivateChannelById().queue();  //long channel id goes here of user to private message, this will error if empty
         channel.sendMessage(embed.build()).queue();
     }
 
