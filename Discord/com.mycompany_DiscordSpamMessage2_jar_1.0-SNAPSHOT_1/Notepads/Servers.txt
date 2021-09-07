@@ -1,9 +1,0 @@
-[
-    {
-        "channelName": "Discord Server Name",
-        "id": "0",
-        "serverId": "Server id",
-        "channelId": "Channel Id",
-	"sendMessage": false
-    }
-]
